@@ -163,15 +163,16 @@ Example:
     GET http://127.0.0.1:8000/customer_summary?customer_id=17850
 
 Sample Response:
-    [
-        {
-            "CustomerID": 17850,
-            "TotalSpent": 528.75,
-            "TotalOrders": 12,
-            "TotalItems": 245,
-            "LastPurchaseDate": "2025-01-15 14:30:00"
-        }
-    ]
+ ```json
+[
+    {
+    "CustomerID": 17850,
+    "TotalOrders": 35,
+    "TotalItems": 1607,
+    "TotalSpent": 4996.37,
+    }
+]
+ ```
 
 ------------------------------------------------------------------------
 
@@ -185,31 +186,38 @@ Example:
     GET http://127.0.0.1:8000/product_sales?product_code=85123A
 
 Sample Response:
-
+```json
 [
   {
-    "StockCode": "85123A",
-    "TotalSold": 150,
-    "TotalRevenue": 1200.50,
-    "LastSaleDate": "2025-02-18 10:00:00"
+    "StockCode": "85123",
+    "TotalSold": 34068,
+    "Revenue": 93578,
   }
 ]
-
+```
 ------------------------------------------------------------------------
 
 ## 🧪 Sample Queries
 
 Retrieve all customers:
+```sh
 GET /customer_summary
+```
 
 Retrieve specific customer:
+```sh
 GET /customer_summary?customer_id=12345
+```
 
 Retrieve all products:
+```sh
 GET /product_sales
+```
 
 Retrieve specific product:
+```sh
 GET /product_sales?product_code=85123
+```
 
 ------------------------------------------------------------------------
 
