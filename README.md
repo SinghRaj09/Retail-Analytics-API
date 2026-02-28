@@ -119,8 +119,7 @@ SELECT
     CustomerID,
     COUNT(DISTINCT InvoiceNo) AS TotalOrders,
     SUM(Quantity) AS TotalItems,
-    SUM(Quantity * UnitPrice) AS TotalSpent,
-    MAX(InvoiceDate) AS LastPurchaseDate
+    SUM(Quantity * UnitPrice) AS TotalSpent
 FROM transactions
 GROUP BY CustomerID;
 
@@ -128,8 +127,7 @@ CREATE OR REPLACE VIEW product_sales_overview AS
 SELECT 
     StockCode,
     SUM(Quantity) AS TotalSold,
-    SUM(Quantity * UnitPrice) AS TotalRevenue,
-    MAX(InvoiceDate) AS LastSaleDate
+    SUM(Quantity * UnitPrice) AS Revenue
 FROM transactions
 GROUP BY StockCode;
 ```
@@ -183,7 +181,7 @@ Sample Response:
 
 Example:
 
-    GET http://127.0.0.1:8000/product_sales?product_code=85123A
+    GET http://127.0.0.1:8000/product_sales?product_code=85123
 
 Sample Response:
 ```json
